@@ -3,7 +3,7 @@ This repo is a student group project for the CS203 class (Yoobee Colleges, Auckl
 
 ## Objective
 
-To create a web app that effectively matches gamers with games. 
+To create a web ~~app~~ project that effectively matches gamers with games. 
 1. Users take a gamer motivation test 
 2. System takes their results as input into a recommendation system
 3. Recommendation system predicts a list of games that match a user's 'gamer personality'
