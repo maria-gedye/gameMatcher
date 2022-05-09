@@ -57,15 +57,16 @@ a {
 }
 
 .Button {
-    justify-content: center;
+    /* justify-content: center; */
     display: flex;
+    padding-top: 10px;
 }
 
 Button {
     justify-content: space-between;
     border-radius: 4px;
     background-color: white;
-    padding: 15px 32px;
+    padding: 10px 22px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -92,10 +93,22 @@ Button {
     background-color: aquamarine;
 }
 
-Form {
+.Form {
     display: flex;
     border: 1px solid black;
-    justify-content: center;
     background-color: aqua;
-    padding: 5px 20px;
+    padding: 10px 20px;
+}
+
+.LabelNames {
+    padding-right: 20px;
+}
+
+input {
+    transform: scale(1.2);
+}
+
+#loginContainer {
+    display: contents;
+    justify-content: center;
 }
