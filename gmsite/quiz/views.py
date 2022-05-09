@@ -11,7 +11,8 @@ def index(request):
 def detail(request, question_id):
     return HttpResponse("Question " % question_id)
 
-def results(request)
+
+def results(request):
     response = "Your results are..."
     return HttpResponse(response)
 
