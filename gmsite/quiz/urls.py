@@ -9,5 +9,7 @@ urlpatterns = [
     # path for individual question
     path('<int:question_id>/', views.detail, name='detail'),
     # path for results
-    path('results/', views.results, name='results')
+    path('results/', views.results, name='results'),
+    # path for login
+    path('login/', views.login, name='login')
 ]

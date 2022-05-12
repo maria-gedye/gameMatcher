@@ -24,4 +24,8 @@ def results(request):
     response = "Your results are..."
     return HttpResponse(response)
 
+
+def login(request):
+    return render(request, 'quiz/login.html')
+
 # thinking of having 2 quizzes: 1) Gamer Motivation     2) Personality
