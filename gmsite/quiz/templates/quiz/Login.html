@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GameMatcher</title>
+    <title>GameMatcherLogin</title>
     <!-- CSS only -->
     <script
       src="https://kit.fontawesome.com/512b61f13b.js"
@@ -25,25 +25,25 @@
             <h1 class="Logo"><a href="Index.html">GameMatcher</a></h1>
           </div>
           <a class="Nav" href="About.html">About Us</a>
-          <a class="Nav" href="Login.html">Login</a>
+          <a class="Nav">Login/SignUp</a>
         </div>
       </div>
     </div>
 
     <div class="BodyContainer">
-        <!-- django stuff here -->
-        {% if latest_question_list %}
-            <ul>
-            {% for question in latest_question_list %}
-                <li><a href="/quiz/{{ question.id }}/">{{ question.question_text }}</a></li>
-            {% endfor %}
-            </ul>
-        {% else %}
-            <p>No polls are available.</p>
-        {% endif %}
       <div class="ContainerPadding">
-        <div class="Button">
-          <button id="START"><a href="Login.html">START MATCHING</a></button>
+        <div id="loginContainer">
+          <div class="LoginTitles">
+            <label for="Email" class="LabelNames">Email: </label><br />
+            <div class="Form"><input type="text" id="FirstName" /><br /></div>
+          </div>
+          <div class="LoginTitles">
+            <label for="Password" class="LabelNames">Password: </label><br />
+            <div class="Form"><input type="text" id="LastName" /><br /></div>
+            <div class="Button">
+              <button id="LOGIN"><a href="UsersMenu.html">Login</a></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
