@@ -62,16 +62,29 @@ a {
     padding-top: 10px;
 }
 
-Button {
+
+/* Button {} */
+
+.Title {
+    display: flex;
+    padding-top: 10px;
+    justify-content: center;
+}
+
+
+/* ABOUT CSS SECTION */
+
+.about {
     justify-content: space-between;
-    border-radius: 4px;
-    background-color: white;
     padding: 10px 22px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    border: 1px solid black;
+    font-size: 50px;
+}
+
+.SecondaryContainerPadding {
+    padding: 10px;
 }
 
 
@@ -83,7 +96,7 @@ Button {
     padding: 20px 5px;
     margin: 30px 20px;
     border-radius: 5px;
-    background-color: green;
+    /*background-color: green;*/
 }
 
 .ContainerPadding {
