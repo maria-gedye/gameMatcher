@@ -4,16 +4,47 @@
     box-sizing: border-box;
 }
 
+
+/* Header 1 */
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 300%;
+    text-shadow: 0 0 3px black;
+}
+
+
+/* Overal Body For Html */
+
 body {
     font-family: 'Montserrat Bold', sans-serif;
-    background-image: url("Images/Anime.jpg");
 }
 
-img {
-    object-fit: fill;
+
+/* everything in the html files */
+
+html {
+    background: url("Images/Fire.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
 }
+
+@media screen and (max-width: 1024px) {
+    /* Specific to this particular image */
+    img.bg {
+        left: 50%;
+        margin-left: -512px;
+        /* 50% */
+    }
+}
+
+
+/* Nav Section */
 
 .Nav {
+    background-color: blueviolet;
     color: black;
     display: flex;
     align-items: center;
@@ -41,34 +72,49 @@ img {
     flex-direction: row;
     max-width: 1200px;
     margin: auto;
+    background-color: rgb(64, 226, 43);
 }
 
 #NavContainer {
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(226, 43, 171);
 }
 
 .Logo {
     height: 24px;
+    background-color: brown;
 }
+
+
+/* Anchor Element */
 
 a {
     text-decoration: none;
 }
 
-.Button {
-    /* justify-content: center; */
+
+/* StartButton in Index.Html */
+
+#StartButton {
+    justify-content: center;
     display: flex;
     padding-top: 10px;
 }
 
 
-/* Button {} */
+/* Button Css */
 
-.Title {
+Button {
     display: flex;
-    padding-top: 10px;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 4px;
+    border: 1px solid black;
 }
 
 
@@ -84,7 +130,17 @@ a {
 }
 
 .SecondaryContainerPadding {
+    background-color: rgb(184, 168, 200);
     padding: 10px;
+}
+
+
+/* for all the titles located in about.html & about2.html */
+
+.Title {
+    display: flex;
+    padding-top: 10px;
+    justify-content: center;
 }
 
 
@@ -96,6 +152,7 @@ a {
     padding: 20px 5px;
     margin: 30px 20px;
     border-radius: 5px;
+    background-color: rgb(226, 177, 43);
     /*background-color: green;*/
 }
 
@@ -104,7 +161,12 @@ a {
     max-width: 1200px;
     margin: auto;
     background-color: aquamarine;
+    justify-content: space-between;
+    display: flex;
 }
+
+
+/* for the login input*/
 
 .Form {
     display: flex;
@@ -122,6 +184,13 @@ input {
 }
 
 #loginContainer {
-    display: contents;
+    display: table-column;
     justify-content: center;
+}
+
+#LoginButton {
+    justify-content: flex-star;
+    display: flex;
+    padding-top: 10px;
+    border-radius: 5px;
 }
