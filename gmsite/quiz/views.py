@@ -1,3 +1,4 @@
+# Django views are Python functions that takes http requests and returns http response, like HTML documents.
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Question
@@ -28,4 +29,8 @@ def results(request):
 def login(request):
     return render(request, 'quiz/login.html')
 
-# thinking of having 2 quizzes: 1) Gamer Motivation     2) Personality
+
+def gamer_test(request):
+    return render(request, 'quiz/gamer-test.html')
+
+

@@ -19,7 +19,8 @@
       <div id="NavContainer">
         <div id="NavBar">
           <a class="Nav">Games</a>
-          <a class="Nav">Test</a>
+            <!-- GAMER'S QUIZ ACCESS HERE -->
+          <a class="Nav" href="{% url 'gamer-test' %}">Test</a>
           <div class="LogoName">
             <h1 class="Logo"><a href="{% url 'index' %}">GameMatcher</a></h1>
           </div>
@@ -30,16 +31,17 @@
     </div>
 
     <div class="BodyContainer">
-        <!-- django stuff here -->
-        {% if latest_question_list %}
+<!-- DISPLAY CURRENT QUESTIONS -->
+              {% if latest_question_list %}
             <ul>
             {% for question in latest_question_list %}
                 <li><a href="/quiz/{{ question.id }}/">{{ question.question_text }}</a></li>
             {% endfor %}
             </ul>
         {% else %}
-            <p>No polls are available.</p>
+            <p>No questions are available.</p>
         {% endif %}
+    <!-- END OF LIST -->
       <div class="ContainerPadding">
         <div class="Button">
           <button id="START"><a href="{% url 'login' %}">START MATCHING</a></button>

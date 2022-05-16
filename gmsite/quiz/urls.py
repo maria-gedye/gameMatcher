@@ -11,5 +11,6 @@ urlpatterns = [
     # path for results
     path('results/', views.results, name='results'),
     # path for login
-    path('login/', views.login, name='login')
+    path('login/', views.login, name='login'),
+    path('gamer-test/', views.gamer_test, name='gamer-test')
 ]
