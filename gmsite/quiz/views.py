@@ -31,6 +31,8 @@ def login(request):
 
 
 def gamer_test(request):
-    return render(request, 'quiz/gamer-test.html')
+    latest_question_list = Question.objects.order_by('id')[:10]
+    context = {'latest_question_list': latest_question_list}
+    return render(request, 'quiz/gamer-test.html', context)
 
 
