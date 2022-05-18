@@ -18,16 +18,23 @@
 <p> GameMatcher uses a test with the Gamer DNA Model that is used with machine learning to connect players with the games they will enjoy playing with most.</p>
 <a href=""><b>Start test</b></a>
 
-        <!-- django stuff here -->
         {% if latest_question_list %}
             <form action="" class="test-form">
                 {% for question in latest_question_list %}
                     <div class="question">
                         <p href="/quiz/{{ question.id }}/">{{ question.question_text }}</p>
+                        <br>
                         <input name="question-{{ forloop.counter }}" type="text">
+                        <br>
+                        <br>
+<!--                        {% for choice in question.choice_set.all %}
+                            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+                        <br>
+                        {% endfor %}-->
                         <a class="prev button" onclick="plusSlides(-1)">Go Back</a>
                         {% if forloop.last %}
-                            <input class="submit button" type="submit">Submit</input>
+                            <input class="submit button" type="submit" value="Vote">Submit</input>
                         {% else %}
                             <a class="next button" onclick="plusSlides(1)">Next</a>
                         {% endif %}

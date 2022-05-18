@@ -12,5 +12,6 @@ urlpatterns = [
     path('results/', views.results, name='results'),
     # path for login
     path('login/', views.login, name='login'),
-    path('gamer-test/', views.gamer_test, name='gamer-test')
+    path('gamer-test/', views.gamer_test, name='gamer-test'),
+    path('<int:question_id>/vote/', views.vote, name='vote')
 ]
