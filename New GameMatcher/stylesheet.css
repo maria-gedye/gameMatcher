@@ -1,0 +1,183 @@
+:root {
+    --estimateforeground: #FFFFFF;
+    --estimatebackground: #E3F3FF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat Bold', sans-serif;
+    background: url("Images/Fire.jpg") no-repeat center center fixed;
+}
+
+.Nav {
+    color: black;
+    display: flex;
+    align-items: center;
+    color: var(--color-dark-blue-base);
+    height: 100%;
+    width: 120px;
+    text-decoration: none;
+    justify-content: center;
+}
+
+.Nav:hover {
+    background-color: #f0f0f0;
+}
+
+.Icon {
+    padding: 20px;
+}
+
+.Logo {
+    height: 24px;
+}
+
+#SignIn {
+    border: 2px solid #0047BA;
+    border-radius: 24px;
+    box-sizing: border-box;
+    text-decoration: none;
+    align-items: center;
+    text-align: center;
+}
+
+#NavBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 8px;
+    height: 80px;
+}
+
+#NavContainer,
+#flexBodyContainer {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    margin: auto;
+    justify-content: center;
+    /*   border: 1px solid black;*/
+}
+
+#NavContainer2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#NavContainer {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.HeadingContainerSummary {
+    padding: 20px 5px;
+    background-image: url("Images/Background.png");
+    background-size: cover;
+    background-position: 50% 20%;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 300%;
+}
+
+h2 {
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 120%;
+}
+
+h3 {
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--estimateforeground);
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+#intro {
+    text-align: center;
+    color: white;
+}
+
+.Container {
+    padding: 20px 5px;
+    background-color: white;
+    margin: 30px 20px;
+    /*    border: 3px solid white;*/
+    border-radius: 5px;
+    /* box-shadow: 1px 1px 8px black;*/
+}
+
+.HeadingContainer {
+    padding: 60px 5px;
+    background-image: url("Images/Background.png");
+    background-size: cover;
+    background-position: 50% 20%;
+    margin-bottom: 30px;
+    /* border: 3px solid #B6DAF1;
+  /*  border-radius: 5px;*/
+    /* box-shadow: 1px 1px 8px black;*/
+}
+
+.FooterContainer {
+    padding: 20px 5px;
+    background-image: url("Images/Background.png");
+    background-size: cover;
+    background-position: 50% 20%;
+    margin-bottom: 30px;
+}
+
+.ContainerPadding {
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+    /*  border: 3px solid white;*/
+}
+
+button {
+    justify-content: space-between;
+    border-radius: 4px;
+    background-color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: 1px solid black;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.FlexContainers {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    padding-bottom: 8px;
+}
+
+img {
+    max-width: 10%;
+    height: auto;
+    display: flex;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
