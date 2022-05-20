@@ -12,8 +12,8 @@ To create a web ~~app~~ project that effectively matches gamers with games.
 
 ## Frameworks/Libraries
 
-Django
-jQuery
+- Django
+- jQuery
 
 
 # Install gameMatcher
@@ -33,9 +33,11 @@ in the command line and use the following command to call the venv module:
 now activate the virtual environment:
 
 `# Windows`
+
 `source env/Scripts/activate`
 
 `# Linux, WSL or macOS`
+
 `source env/bin/activate`
 
 
