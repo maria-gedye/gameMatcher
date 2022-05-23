@@ -33,8 +33,15 @@ body {
     padding: 20px;
 }
 
-.Logo {
-    height: 24px;
+.Logo1 {
+    height: 50px;
+}
+.Logo2 {
+    max-height: 20%;
+    max-width: 20%;
+    display: flex;
+    padding: 10px;
+    margin-top: 10px;
 }
 
 #SignIn {
@@ -71,8 +78,12 @@ body {
 }
 
 #NavContainer {
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.Container{
+    display: flex;
+    padding: 10px;
 }
 
 .HeadingContainerSummary {
@@ -84,13 +95,13 @@ body {
 }
 
 h1 {
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     font-size: 300%;
 }
 
 h2 {
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 5px;
     text-align: center;
     font-size: 120%;
@@ -107,7 +118,7 @@ h3 {
 
 #intro {
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .Container {
@@ -160,6 +171,7 @@ button {
 a {
     text-decoration: none;
     color: white;
+    padding: none;
 }
 
 .FlexContainers {
@@ -171,13 +183,13 @@ label {
     padding-bottom: 8px;
 }
 
-img {
+ img {
     max-width: 10%;
-    height: auto;
+    height: 50px;
     display: flex;
-}
+} 
 
-img {
+ img {
     max-width: 100%;
     height: auto;
-}
+} 
