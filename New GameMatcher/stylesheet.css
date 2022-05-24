@@ -204,4 +204,28 @@ label {
   .quiz-header{
     padding: 4rem;
   }
+  #submit{
+    background-color: #dd3510;
+    color: #fff;
+    border: none;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: inherit;
+    padding: 1.3rem;
+  }
   
+  /* GAMES PAGE*/
+  #grid {
+    width: 600px;
+    display: grid;
+    grid-template-areas: "a a";
+    gap: 50px;
+    grid-auto-rows: 300px;
+  }
+  
+  #grid > div {
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+  }
