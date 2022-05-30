@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GameMatcher</title>
+    <!-- CSS only -->
+    <script
+      src="https://kit.fontawesome.com/512b61f13b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="FlexBodyContainer">
+      <div id="NavContainer">
+        <div id="NavBar">
+          <a class="Nav">Games</a>
+          <a class="Nav">Test</a>
+          <div class="LogoName">
+            <h1 class="Logo"><a href="Index.html">GameMatcher</a></h1>
+          </div>
+          <a class="Nav" href="About.html">About Us</a>
+          <a class="Nav" href="Login.html">Login</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="BodyContainer">
+        <!-- django stuff here -->
+        {% if latest_question_list %}
+            <ul>
+            {% for question in latest_question_list %}
+                <li><a href="/quiz/{{ question.id }}/">{{ question.question_text }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+      <div class="ContainerPadding">
+        <div class="Button">
+          <button id="START"><a href="Login.html">START MATCHING</a></button>
+        </div>
+      </div>
+    </div>
+    <div class="FooterContainer"></div>
+  </body>
+</html>
