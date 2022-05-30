@@ -74,9 +74,10 @@ Make sure you have followed steps 1-3 and that the server is running:
 
 `python manage.py runserver`
 
-admin website should be displaying locally on[http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
+admin website should be displaying locally on [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
 
 You should see a login page. This is the default admin login details:
 
-Username: admin
-Password: django99
+Username: foo
+
+Password: bar

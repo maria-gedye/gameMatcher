@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.not-visible {
+    display: none;
+}
+
 body {
     font-family: 'Montserrat Bold', sans-serif;
     background-image: url("Images/Anime.jpg");
