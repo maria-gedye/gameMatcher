@@ -1,13 +1,14 @@
-* {
+/** {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+}*/
 
 .not-visible {
     display: none;
 }
 
+/*
 body {
     font-family: 'Montserrat Bold', sans-serif;
     background-image: url("Images/Anime.jpg");
@@ -61,13 +62,17 @@ a {
 }
 
 .Button {
-    /* justify-content: center; */
+    */
+/* justify-content: center; *//*
+
     display: flex;
     padding-top: 10px;
 }
 
 
-/* Button {} */
+*/
+/* Button {} *//*
+
 
 .Title {
     display: flex;
@@ -76,7 +81,9 @@ a {
 }
 
 
-/* ABOUT CSS SECTION */
+*/
+/* ABOUT CSS SECTION *//*
+
 
 .about {
     justify-content: space-between;
@@ -92,7 +99,9 @@ a {
 }
 
 
-/* LOGIN CSS SECTION */
+*/
+/* LOGIN CSS SECTION *//*
+
 
 .BodyContainer {
     justify-content: center;
@@ -100,7 +109,9 @@ a {
     padding: 20px 5px;
     margin: 30px 20px;
     border-radius: 5px;
-    /*background-color: green;*/
+    */
+/*background-color: green;*//*
+
 }
 
 .ContainerPadding {
@@ -134,4 +145,4 @@ input {
     cursor:pointer;
     padding:10px;
     background-color: grey;
-}
+}*/
