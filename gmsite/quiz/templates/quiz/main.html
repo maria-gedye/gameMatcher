@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block scripts %}
-    <script src="{% static 'quiz/js/main.js' %}" defer></script>
+  <script src="{% static 'quiz/js/myMain.js' %}" defer></script>
 {% endblock scripts %}
 
 {% block title %}
@@ -43,7 +43,7 @@ home
       data-toggle="modal"
       data-target="#quizStartModal">
       {{obj.name}}
-  </button>
+  </button><br>
 
 {% endfor %}
 {% endblock content %}

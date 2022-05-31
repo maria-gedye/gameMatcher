@@ -1,7 +1,9 @@
-/*console.log('hello world')*/
+console.log('beepbop')
 
 const modalBtns = [...document.getElementsByClassName('modal-button')]
 const modalBody = document.getElementById('modal-body-confirm')
+const startBtn = document.getElementById('start-button')
+const url = window.location.href
 
 modalBtns.forEach(modalBtn=> modalBtn.addEventListener('click', ()=>{
     const pk = modalBtn.getAttribute('data-pk')
@@ -17,37 +19,8 @@ modalBtns.forEach(modalBtn=> modalBtn.addEventListener('click', ()=>{
                 <li>Time: <b>${time} min</b></li>
             </ul>
     `
+
+    startBtn.addEventListener('click', ()=>{
+        window.location.href = url + pk
+    })
 }))
-
-/*
-$( document ).ready(function() {
-
-});
-
-let questionIndex = 1;
-showSlides(questionIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(questionIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(questionIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("question")
-  console.log(slides);
-  if (n > slides.length) {questionIndex = 1}
-  if (n < 1) {questionIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[questionIndex-1].style.display = "block";
-}
-
-
-*/
