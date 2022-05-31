@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import random
 
 # Anytime new classes or changes to classes happen, run:
 # python manage.py makemigrations
@@ -18,7 +19,9 @@ class Quiz(models.Model):
         return f"{self.name}"
 
     def get_questions(self):
-        return self.question_set.all()[:self.number_of_questions]
+        questions = list(self.question_set.all())
+        random.shuffle(questions)
+        return questions[:self.number_of_questions]
 
     class Meta:
         verbose_name_plural = 'Quizzes'

@@ -8,7 +8,7 @@ $.ajax({
     type: 'GET',
     url: `${url}data`,
     success: function(response){
-        console.log(response)
+/*        console.log(response)*/
         data = response.data
         data.forEach(el => {
             for (const [question, answers] of Object.entries(el)){
