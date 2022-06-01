@@ -77,6 +77,8 @@ def save_quiz_view(request, pk):
                             if q.characteristic == k:
                                 score += a.score
                                 characteristic_scores[k] = score
+                            # reset the score before looping through next key!
+                            score = 0
                 # if the answers characteristic matches the dict's key
                 # take the answers score and update the matching key's value
                 results.append({str(q): a_selected})
