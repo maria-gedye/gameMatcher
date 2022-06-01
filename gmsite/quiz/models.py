@@ -26,19 +26,6 @@ class Quiz(models.Model):
     class Meta:
         verbose_name_plural = 'Quizzes'
 
-
-class Question(models.Model):
-    text = models.CharField(max_length=250)
-    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
-    created = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return str(self.text)
-
-    def get_answers(self):
-        return self.answer_set.all()
-
-
 CHARACTERISTIC_CHOICES = (
     ('---', '---'),
     ('action', 'action'),
@@ -54,11 +41,23 @@ CHARACTERISTIC_CHOICES = (
 )
 
 
+class Question(models.Model):
+    text = models.CharField(max_length=250)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    characteristic = models.CharField(max_length=22, choices=CHARACTERISTIC_CHOICES, default=0)
+
+    def __str__(self):
+        return str(self.text)
+
+    def get_answers(self):
+        return self.answer_set.all()
+
+
 class Answer(models.Model):
     text = models.CharField(max_length=100)
     score = models.IntegerField()
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    characteristic = models.CharField(max_length=22, choices=CHARACTERISTIC_CHOICES, default=0)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -68,7 +67,11 @@ class Answer(models.Model):
 class Result(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    score = models.FloatField()
+    score = models.CharField(max_length=50)
+    # need to find data type that can display all characteristics as keys with
+    # retrospective scores
 
     def __str__(self):
         return str(self.pk)
+
+

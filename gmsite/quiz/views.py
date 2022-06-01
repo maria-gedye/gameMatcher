@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Quiz
 from django.views.generic import ListView
 from django.http import JsonResponse
-from .models import Question, Answer
+from .models import Question, Answer, Result
 
 
 class QuizListView(ListView):
@@ -61,7 +61,7 @@ def save_quiz_view(request, pk):
             'story': 0
         }
         score = 0
-        multiplier = 100 / quiz.number_of_questions
+        incomplete_count = 0
         results = []
 
         for q in questions:
@@ -70,18 +70,31 @@ def save_quiz_view(request, pk):
             if a_selected != "":
                 question_answers = Answer.objects.filter(question=q)
                 for a in question_answers:
+
                     if a_selected == a.text:
                         ck = characteristic_scores.keys()
                         for k in ck:
-                            if a.characteristic == k:
+                            if q.characteristic == k:
                                 score += a.score
                                 characteristic_scores[k] = score
-                                score = 0
                 # if the answers characteristic matches the dict's key
                 # take the answers score and update the matching key's value
-                print(characteristic_scores)
+                results.append({str(q): a_selected})
 
-    return JsonResponse({'text': 'works'})
+            else:
+                results.append({str(q): 'not answered'})
+                incomplete_count += 1
+
+        print(characteristic_scores)
+        score_ = max(characteristic_scores, key=characteristic_scores.get)
+        Result.objects.create(quiz=quiz, user=user, score=score_)
+
+        if incomplete_count == 0:
+            return JsonResponse({'all_questions_complete': True, 'result': results, 'highest characteristic': score_})
+        else:
+            return JsonResponse({'all_questions_complete': False})
+    # if all questions are != "" then 'passed': True else 'passed': False
+
 
 
 
