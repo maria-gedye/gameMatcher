@@ -92,7 +92,7 @@ def save_quiz_view(request, pk):
         Result.objects.create(quiz=quiz, user=user, score=score_)
 
         if incomplete_count == 0:
-            return JsonResponse({'all_questions_complete': True, 'result': results, 'highest characteristic': score_})
+            return JsonResponse({'all_questions_complete': True, 'results': results, 'highest characteristic': score_})
         else:
             return JsonResponse({'all_questions_complete': False})
     # if all questions are != "" then 'passed': True else 'passed': False

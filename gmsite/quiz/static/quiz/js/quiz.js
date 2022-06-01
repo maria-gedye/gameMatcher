@@ -57,7 +57,24 @@ const sendData = () => {
         url: `${url}save/`,
         data: data,
         success: function(response){
-            console.log(response)
+            // console.log(response)
+            const results = response.results
+            console.log(results)
+             // has to match key in JsonResponse in views.py
+            quizForm.classList.add('not-visible')
+
+            results.forEach(res=>{
+                const resDiv = document.createElement("div")
+                for (const [question, resp] of Object.entries(res)){
+                    console.log(question)
+                    console.log(resp)
+                    console.log('*****')
+                    // displaying each question and response in console
+                    // we want to display the characteristic scores only;
+                    // the name of each characteristic and what the score is for each
+
+                }
+            })
         },
         error: function(error){
             console.log(error)
