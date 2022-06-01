@@ -40,6 +40,7 @@ class Question(models.Model):
 
 
 CHARACTERISTIC_CHOICES = (
+    ('---', '---'),
     ('action', 'action'),
     ('strategy', 'strategy'),
     ('aesthetics', 'aesthetics'),
@@ -57,7 +58,7 @@ class Answer(models.Model):
     text = models.CharField(max_length=100)
     score = models.IntegerField()
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    characteristic = models.CharField(max_length=20, choices=CHARACTERISTIC_CHOICES, default=0)
+    characteristic = models.CharField(max_length=22, choices=CHARACTERISTIC_CHOICES, default=0)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
