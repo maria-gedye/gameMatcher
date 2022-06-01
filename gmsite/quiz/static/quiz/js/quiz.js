@@ -57,9 +57,10 @@ const sendData = () => {
         url: `${url}save/`,
         data: data,
         success: function(response){
-            // console.log(response)
+            console.log(response)
+            const scores = response.scores
             const results = response.results
-            console.log(results)
+            console.log(scores)
              // has to match key in JsonResponse in views.py
             quizForm.classList.add('not-visible')
 

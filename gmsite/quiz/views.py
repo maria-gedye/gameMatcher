@@ -78,7 +78,8 @@ def save_quiz_view(request, pk):
                                 score += a.score
                                 characteristic_scores[k] = score
                             # reset the score before looping through next key!
-                            score = 0
+                            else:
+                                score = 0
                 # if the answers characteristic matches the dict's key
                 # take the answers score and update the matching key's value
                 results.append({str(q): a_selected})
@@ -87,14 +88,16 @@ def save_quiz_view(request, pk):
                 results.append({str(q): 'not answered'})
                 incomplete_count += 1
 
+        results.append(characteristic_scores)
         print(characteristic_scores)
+        # all prints appear once server is closed - need to fix this
         score_ = max(characteristic_scores, key=characteristic_scores.get)
         Result.objects.create(quiz=quiz, user=user, score=score_)
 
         if incomplete_count == 0:
-            return JsonResponse({'all_questions_complete': True, 'results': results, 'highest characteristic': score_})
+            return JsonResponse({'all_questions_complete': True, 'results': results, 'scores': characteristic_scores})
         else:
-            return JsonResponse({'all_questions_complete': False})
+            return JsonResponse({'all_questions_complete': False, 'scores': characteristic_scores})
     # if all questions are != "" then 'passed': True else 'passed': False
 
 
