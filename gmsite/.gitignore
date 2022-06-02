@@ -2,3 +2,20 @@ asgiref==3.5.2
 Django==4.0.4
 sqlparse==0.4.2
 tzdata==2022.1
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/

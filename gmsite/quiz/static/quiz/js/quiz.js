@@ -121,6 +121,7 @@ homeBtn.addEventListener('click', ()=>{
 // const scoreChart = document.getElementById('score-chart')
 
 // Next steps (Group Assessment):
-/* - display more detailed results (show user's top characteristics and display info)
-    - set up logic for game recommendations (set of if/else cases)
-    - Merge styling across branches */
+/* - display more detailed results (show user's top characteristics and display text info)
+    - set up logic for game recommendations (chain of if/else cases)
+    - Merge styling across git branches */
+
