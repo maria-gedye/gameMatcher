@@ -57,25 +57,49 @@ const sendData = () => {
         url: `${url}save/`,
         data: data,
         success: function(response){
-            console.log(response)
+            // console.log(response)
             const scores = response.scores
             const results = response.results
-            console.log(scores)
-             // has to match key in JsonResponse in views.py
+            console.log(results)
+            const rgb = ['aqua', 'black', 'blue', 'fuchsia', 'gray', 'green',
+'lime', 'maroon', 'navy', 'olive', 'orange', 'purple', 'red',
+'silver', 'teal', 'white', 'yellow']
+            const scoreData = {
+                  labels: Object.keys(scores),
+                  datasets: [{
+                    label: 'Gamer Motivation Dataset',
+                    data: Object.values(scores),
+                    backgroundColor: rgb,
+                    hoverOffset: 4
+                  }]
+                }
+            // CHART.JS CONFIG
+            const config = {
+              type: 'pie',
+              data: scoreData,  // should be scores ,
+              options: {
+                responsive: true,
+                plugins: {
+                  legend: {
+                    position: 'top',
+                  },
+                  title: {
+                    display: true,
+                    text: 'Awesome! Here are your results'
+                  }
+                }
+              },
+            }
+            // END OF CHART.JS CONFIG
             quizForm.classList.add('not-visible')
 
-            results.forEach(res=>{
-                const resDiv = document.createElement("div")
-                for (const [question, resp] of Object.entries(res)){
-                    console.log(question)
-                    console.log(resp)
-                    console.log('*****')
-                    // displaying each question and response in console
+            const myChart = new Chart(
+                document.getElementById('scoreChart'),
+                config
+              )
                     // we want to display the characteristic scores only;
                     // the name of each characteristic and what the score is for each
 
-                }
-            })
         },
         error: function(error){
             console.log(error)
@@ -88,3 +112,4 @@ quizForm.addEventListener('submit', e=>{
 
     sendData()
 })
+

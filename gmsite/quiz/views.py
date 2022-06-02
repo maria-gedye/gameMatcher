@@ -75,11 +75,7 @@ def save_quiz_view(request, pk):
                         ck = characteristic_scores.keys()
                         for k in ck:
                             if q.characteristic == k:
-                                score += a.score
-                                characteristic_scores[k] = score
-                            # reset the score before looping through next key!
-                            else:
-                                score = 0
+                                characteristic_scores[k] += a.score
                 # if the answers characteristic matches the dict's key
                 # take the answers score and update the matching key's value
                 results.append({str(q): a_selected})
@@ -97,7 +93,7 @@ def save_quiz_view(request, pk):
         if incomplete_count == 0:
             return JsonResponse({'all_questions_complete': True, 'results': results, 'scores': characteristic_scores})
         else:
-            return JsonResponse({'all_questions_complete': False, 'scores': characteristic_scores})
+            return JsonResponse({'all_questions_complete': False, 'results': results, 'scores': characteristic_scores})
     # if all questions are != "" then 'passed': True else 'passed': False
 
 

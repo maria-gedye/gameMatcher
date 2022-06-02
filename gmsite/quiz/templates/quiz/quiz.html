@@ -3,6 +3,8 @@
 
 {% block scripts %}
   <script src="{% static 'quiz/js/quiz.js' %}" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 {% endblock scripts %}
 
 {% block title %}
@@ -17,4 +19,8 @@
   <div id="quiz-box"></div>
   <button type="submit" class="btn btn-primary mt-3">save</button>
 </form>
+
+<div>
+  <canvas id="scoreChart"></canvas>
+</div>
 {% endblock content %}
