@@ -8,12 +8,10 @@ $.ajax({
     type: 'GET',
     url: `${url}data`,
     success: function(response){
-/*        console.log(response)*/
+        // console.log(response)
         data = response.data
         data.forEach(el => {
             for (const [question, answers] of Object.entries(el)){
-      /*          console.log(question)
-                console.log(answers)*/
                 quizBox.innerHTML += `
                     <hr>
                     <div class="mb-2">
@@ -61,9 +59,9 @@ const sendData = () => {
             const scores = response.scores
             const results = response.results
             console.log(results)
-            const rgb = ['aqua', 'black', 'blue', 'fuchsia', 'gray', 'green',
-'lime', 'maroon', 'navy', 'olive', 'orange', 'purple', 'red',
-'silver', 'teal', 'white', 'yellow']
+            const rgb = ['aqua', 'blue', 'fuchsia', 'green',
+                    'lime', 'navy', 'orange', 'purple', 'red',
+                     'teal', 'yellow']
             const scoreData = {
                   labels: Object.keys(scores),
                   datasets: [{
@@ -85,7 +83,7 @@ const sendData = () => {
                   },
                   title: {
                     display: true,
-                    text: 'Awesome! Here are your results'
+                    text: 'GAMER TYPES'
                   }
                 }
               },
@@ -113,3 +111,16 @@ quizForm.addEventListener('submit', e=>{
     sendData()
 })
 
+const homeBtn = document.getElementById('home-button')
+
+homeBtn.addEventListener('click', ()=>{
+        homeUrl = window.location.href.slice(0, -2)
+        window.location.href = homeUrl
+    })
+
+// const scoreChart = document.getElementById('score-chart')
+
+// Next steps (Group Assessment):
+/* - display more detailed results (show user's top characteristics and display info)
+    - set up logic for game recommendations (set of if/else cases)
+    - Merge styling across branches */

@@ -3,19 +3,19 @@ This repo is a student group project for the CS203 class (Yoobee Colleges, Auckl
 
 ## Objectives
 
-To create a web ~~app~~ project that effectively matches gamers with games. 
+To create a web ~~app~~ project that generates quizzes to effectively matches gamers with games. 
 
-- [X] Users can take a gaming quiz
-- [ ] System takes the user input and calculates the results for that user
+- [X] Users can take the quiz
+- [X] System takes the user input and calculates the results for that user
 - [ ] System uses the results to calculate game recommendations
 - [ ] Users decide which games are/are not a match
-- [ ] System learns from the users' choices and adjusts future predictions based on similar users (collaborative filtering)
 
 ## Frameworks/Libraries
 
 - Django
 - jQuery
 - Bootstrap
+- Chart.js
 
 
 # 1. Install gameMatcher
