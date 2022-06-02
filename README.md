@@ -1,19 +1,21 @@
 # gameMatcher
 This repo is a student group project for the CS203 class (Yoobee Colleges, Auckland campus)
 
-## Objective
+## Objectives
 
-To create a web ~~app~~ project that effectively matches gamers with games. 
-1. Users take a gamer motivation test 
-2. System takes their results as input into a recommendation system
-3. Recommendation system predicts a list of games that match a user's 'gamer personality'
-4. Users decide which games are/are not a match
-5. System learns from the users' choices and adjusts future predictions based on similar users (collaborative filtering)
+To create a web ~~app~~ project that generates quizzes to effectively matches gamers with games. 
+
+- [X] Users can take the quiz
+- [X] System takes the user input and calculates the results for that user
+- [ ] System uses the results to calculate game recommendations
+- [ ] Users decide which games are/are not a match
 
 ## Frameworks/Libraries
 
 - Django
 - jQuery
+- Bootstrap
+- Chart.js
 
 
 # 1. Install gameMatcher
@@ -60,7 +62,7 @@ then run the server by using:
 
 `python manage.py runserver`
 
-website should be displaying locally on [http://localhost:8000/quiz/](http://localhost:8000/quiz/)
+website should be displaying locally on [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 When you want to end your session or run another project, make sure you deactivate your virtual environment using the command:
 
@@ -74,9 +76,10 @@ Make sure you have followed steps 1-3 and that the server is running:
 
 `python manage.py runserver`
 
-admin website should be displaying locally on[http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
+admin website should be displaying locally on [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
 
 You should see a login page. This is the default admin login details:
 
-Username: admin
-Password: django99
+Username: foo
+
+Password: bar
