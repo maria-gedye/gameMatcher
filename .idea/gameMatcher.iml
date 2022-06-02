@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/db/backends" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/db/models" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/apps" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/conf" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/contrib" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/core" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/dispatch" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/forms" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/http" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/middleware" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/template" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/templatetags" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/test" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/urls" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/django/views" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/_distutils_hack" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/asgiref" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/asgiref-3.5.2.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/Django-4.0.4.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/pip" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/pip-22.0.4.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/pkg_resources" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/setuptools" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/setuptools-58.1.0.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/sqlparse" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/sqlparse-0.4.2.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/tzdata" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Lib/site-packages/tzdata-2022.1.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Include" />
+      <excludeFolder url="file://$MODULE_DIR$/gmsite/env/Scripts" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
