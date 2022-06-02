@@ -77,6 +77,7 @@ const sendData = () => {
               data: scoreData,  // should be scores ,
               options: {
                 responsive: true,
+                maintainAspectRatio: true,
                 plugins: {
                   legend: {
                     position: 'top',
