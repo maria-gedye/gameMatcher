@@ -83,3 +83,18 @@ You should see a login page. This is the default admin login details:
 Username: foo
 
 Password: bar
+
+## Current Issues
+
+- Migrations not storing to git properly (databases don't populate after a git pull)
+- Front-end and back-end need to merge into the same directory
+
+To create a new admin from the command line run:
+
+`winpty python manage.py createsuperuser`
+
+and enter details to add yourself as a new admin user
+
+`python manage.py runserver`
+
+Run the server and type in new log in details [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
