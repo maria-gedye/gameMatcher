@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
-{% extends "quiz/base.html" %}
-{% load static %}
 <head>
+    <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- CSS only -->
-    <script src="https://kit.fontawesome.com/512b61f13b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="stylesheet.css">
-    <meta charset="utf-8">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>GameMatcher</title>
+    {% load static %}
+    <!--ERROR WITH CONNECTING CSS FILE BELOW-->
+    <link rel="stylesheet" href="{% static 'quiz/css/stylesheet.css' %}">
+    {% block scripts %}
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://kit.fontawesome.com/512b61f13b.js" crossorigin="anonymous"></script>
+    {% endblock scripts %}
 </head>
 
 <body>
@@ -42,6 +48,7 @@
 
             </div>
         </div>
+    </div>
 </body>
 
 </html>
