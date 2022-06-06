@@ -1,9 +1,19 @@
 from django.contrib import admin
-from .models import Question
-from .models import Choice
+from .models import Quiz
+from .models import Result
+from .models import Question, Answer
 
-# tell admin that question objects have an admin interface...
-# aka register your models to admin
-admin.site.register(Question)
-admin.site.register(Choice)
+admin.site.register(Quiz)
+admin.site.register(Result)
+
+
+class AnswerInline(admin.TabularInline):
+    model = Answer
+
+
+class QuestionAdmin(admin.ModelAdmin):
+    inlines = [AnswerInline]
+
+
+admin.site.register(Question, QuestionAdmin)
 
