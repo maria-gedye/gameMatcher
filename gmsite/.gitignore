@@ -8,6 +8,7 @@ tzdata==2022.1
 *.pot
 *.pyc
 db.sqlite3
+*.sqlite3
 media
 
 # Environments
@@ -18,3 +19,11 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# IDE
+.idea/ # PyCharm settings
+.vscode/ # VSCode settings
+
+# JavaScript
+node_modules/
+build/ # Webpack build output
