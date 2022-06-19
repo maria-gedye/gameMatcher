@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\olivi\desktop\gameMatcher\env"
+VIRTUAL_ENV="C:\Users\olivi\Documents\GitHub\gameMatcher\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
