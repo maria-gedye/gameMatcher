@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 import random
-from matcher/models import SeparatedValuesField
 
 # Anytime new classes or changes to classes happen, run:
 # python manage.py makemigrations
@@ -71,7 +70,7 @@ class Result(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     score = models.CharField(max_length=50)
     # store user's hiscores as a list
-    hiscore = SeparatedValuesField()
+    hiscore = models.JSONField(default=list)
 
     def __str__(self):
         return str(self.pk)
