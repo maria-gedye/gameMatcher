@@ -68,7 +68,6 @@ class Answer(models.Model):
 class Result(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    score = models.CharField(max_length=50)
     # store user's hiscores as a list
     hiscore = models.JSONField(default=list)
 

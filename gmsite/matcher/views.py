@@ -6,11 +6,11 @@ from django.http import JsonResponse
 # a for loop that matches any value from the user's hiscore against a game's genre values.
 # count how many genres match per game
 # sort games out. games with the highest number of matching genres are ordered first
-# store sorted games to a dictionary or into another model called user_games
+# store sorted games to a dictionary, pass this into another model called games_list
 # display games in a listed table format, allow users to delete games and reorder them
 
 
-def games_view(request, pk):
+def games_list_view(request, pk):       # displaying all games
     games_list = GamesList.objects.get(pk=pk)
     print(games_list)
     users_games = []
@@ -18,4 +18,8 @@ def games_view(request, pk):
 
         # if g.genre == to result.hiscore
         # append g to users_games[]
+    pass
+
+
+def game_detail(request, pk):     # displaying an individual game
     pass
