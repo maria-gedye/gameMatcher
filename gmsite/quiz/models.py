@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 import random
+from matcher/models import SeparatedValuesField
 
 # Anytime new classes or changes to classes happen, run:
 # python manage.py makemigrations
@@ -25,6 +26,7 @@ class Quiz(models.Model):
 
     class Meta:
         verbose_name_plural = 'Quizzes'
+
 
 CHARACTERISTIC_CHOICES = (
     ('---', '---'),
@@ -68,8 +70,8 @@ class Result(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     score = models.CharField(max_length=50)
-    # need to find data type that can display all characteristics as keys with
-    # retrospective scores
+    # store user's hiscores as a list
+    hiscore = SeparatedValuesField()
 
     def __str__(self):
         return str(self.pk)

@@ -86,8 +86,7 @@ Password: bar
 
 ## Current Issues
 
-- Migrations not storing to git properly (databases don't populate after a git pull)
-- Front-end and back-end need to merge into the same directory
+If no user data exists, use the following command to create an admin user to access the admin site.
 
 To create a new admin from the command line run:
 
