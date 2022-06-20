@@ -1,4 +1,3 @@
-
 .not-visible {
     display: none;
 }
@@ -20,6 +19,7 @@
     padding: 5px;
     box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
@@ -28,9 +28,10 @@
 
 body {
     font-family: 'Montserrat Bold', sans-serif;
-    background: url("Images/Fire.jpg") no-repeat center center fixed;
+    background: url("../Images/Fire.jpg") no-repeat center center fixed;
 }
-html{
+
+html {
     box-sizing: border-box;
 }
 
@@ -242,14 +243,16 @@ img {
     padding: 1.3rem;
 }
 
-.question{
+.question {
     color: black;
     padding: 5px;
     margin: 15px;
 }
-li{
+
+li {
     padding: 5px;
 }
+
 
 /* GAMES PAGE*/
 
@@ -268,7 +271,6 @@ li{
 
 
 /* ABOUT PAGE*/
-
 
 .column {
     float: left;
@@ -331,7 +333,9 @@ p {
     color: white;
 }
 
+
 /*PROFILE SECTION*/
+
 
 /* .UserImage{
    width: 150px;
@@ -354,19 +358,21 @@ p {
 
 #grid2>div {
     /* background-color: rgb(255, 255, 255); */
-    /* padding: 5px;
+
+
+/* padding: 5px;
 }
 .FGames{
     width: 150px;
     display: flex;
 }  */
 
-
 .main-body {
     padding: 15px;
 }
+
 .card {
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
 }
 
 .card {
@@ -377,7 +383,7 @@ p {
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    border: 0 solid rgba(0,0,0,.125);
+    border: 0 solid rgba(0, 0, 0, .125);
     border-radius: .25rem;
 }
 
@@ -392,23 +398,29 @@ p {
     margin-left: -8px;
 }
 
-.gutters-sm>.col, .gutters-sm>[class*=col-] {
+.gutters-sm>.col,
+.gutters-sm>[class*=col-] {
     padding-right: 8px;
     padding-left: 8px;
 }
-.mb-3, .my-3 {
+
+.mb-3,
+.my-3 {
     margin-bottom: 1rem!important;
 }
 
 .bg-gray-300 {
     background-color: #e2e8f0;
 }
+
 .h-100 {
     height: 100%!important;
 }
+
 .shadow-none {
     box-shadow: none!important;
 }
-.text2{
+
+.text2 {
     color: black;
 }
