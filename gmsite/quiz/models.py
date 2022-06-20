@@ -26,6 +26,7 @@ class Quiz(models.Model):
     class Meta:
         verbose_name_plural = 'Quizzes'
 
+
 CHARACTERISTIC_CHOICES = (
     ('---', '---'),
     ('action', 'action'),
@@ -67,9 +68,8 @@ class Answer(models.Model):
 class Result(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    score = models.CharField(max_length=50)
-    # need to find data type that can display all characteristics as keys with
-    # retrospective scores
+    # store user's hiscores as a list
+    hiscore = models.JSONField(default=list)
 
     def __str__(self):
         return str(self.pk)
