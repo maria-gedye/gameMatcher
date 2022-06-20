@@ -3,6 +3,7 @@
 
 {% block scripts %}
   <script src="{% static 'quiz/js/quiz.js' %}" defer></script>
+  <script src="{% static 'matcher/js/matcher.js' %}" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 {% endblock scripts %}
@@ -13,7 +14,7 @@
 
 {% block content %}
 {{obj.name}}
-
+        <button type="button" id="home-button" class="btn btn-dark">go home</button>
 <form id="quiz-form" class="mt-3 mb-3">
   {% csrf_token %}
   <div id="quiz-box"></div>
@@ -26,18 +27,59 @@
   <canvas id="scoreChart" ></canvas>
 </div>
 
-<div>
+<div> <!--hide this div until save button has been pressed-->
   <p>
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       your results
     </button>
-        <button type="button" id="home-button" class="btn btn-dark">go home</button>
+    <button type="button" id="match-button" class="btn btn-success">start matching!</button>
   </p>
   <div class="collapse" id="collapseExample">
     <div class="card card-body">
-      (more details to come)<br>
-      Your Gamer Type is...<br>
-      You scored highest for these characteristics:
+      Your top gamer characteristics are: (pass through result.hiscore)
+
+      <ui>
+        <li> Action <br>
+              Excitement: adrenaline, explosions, fast pacing <br>
+              Mechanical Skills: timing, accuracy, precision, reflexes
+      </li>
+        <li> Strategy <br>
+              Complexity: many rules, high learning curve, depth <br>
+              Critical Thinking: strategic decision making, foresight, analysis
+        </li>
+        <li> Challenge <br>
+              Difficulty: repeated failure, pushing limits, mastery<br>
+              Practice: training, watching replays, exercises, self-improvement
+      </li>
+        <li> Competition<br>
+              Dominance: pwning noobs, winning, power, influence<br>
+              Status: leaderboards, rankings, levels
+      </li>
+        <li> Fellowship<br>
+              Teamwork: cooperation, helping, unity, shared/synergistic objectives<br>
+              Socializing: friends, relationship building, emotional connection
+          </li>
+          <li> Completion<br>
+        Achievement: badges, accomplishments, collectibles<br>
+        Grinding: progression for time spent, accumulating resources
+        </li>
+          <li> Discovery<br>
+        Autonomy: freedom of choice, multiple paths, lack of required objectives<br>
+        Exploration: procedural generation, large world, diverse activities
+        </li>
+          <li> Aesthetics<br>
+        Graphics: distinct style vs realism, thematic relevance, attention to detail<br>
+        Sound: atmosphere, voice acting, sound effects, music
+        </li>
+          <li> Expression<br>
+        Artistic Creativity: variety, options, uniqueness<br>
+        Roleplay: immersion, make-believe, choose-your-own-adventure
+        </li>
+          <li> Story<br>
+        Characters: interesting, engaging, believable, memorable<br>
+        Lore: backstory, world-building, history, setting
+        </li>
+      </ui>
     </div>
   </div>
 </div>

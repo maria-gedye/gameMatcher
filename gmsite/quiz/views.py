@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Quiz
 from django.views.generic import ListView
 from django.http import JsonResponse
-from .models import Question, Answer, Result
+from .models import Question, Answer, Result, Game
 
 
 class QuizListView(ListView):
@@ -83,7 +83,7 @@ def save_quiz_view(request, pk):
         results.append(characteristic_scores)
 
 # remove characteristics that score under 4 and store into a new dict
-        hiscore = {k: v for k, v in characteristic_scores.items() if v >= 4}
+        hiscore = {k: v for k, v in characteristic_scores.items() if v > 4}
 # create a sorted list of the above dict's keys
         hiscore_keys = sorted(hiscore, key=hiscore.get, reverse=True)
         print(hiscore_keys)
@@ -91,12 +91,28 @@ def save_quiz_view(request, pk):
         Result.objects.create(quiz=quiz, user=user, hiscore=hiscore_keys)
 
         if incomplete_count == 0:
-            return JsonResponse({'all_questions_complete': True, 'results': results, 'scores': hiscore_keys})
+            return JsonResponse({'all_questions_complete': True, 'results': results, 'scores': characteristic_scores})
         else:
-            return JsonResponse({'all_questions_complete': False, 'results': results, 'scores': hiscore_keys})
-    # if all questions are != "" then 'passed': True else 'passed': False
+            return JsonResponse({'all_questions_complete': False, 'results': results, 'scores': characteristic_scores})
 
 
+# MATCHING PART OF THE APP
 
+# Functions needed:
+# a for loop that matches any value from the user's hiscore against a game's genre values.
+# count how many genres match per game
+# sort games out. games with the highest number of matching genres are ordered first
+# store sorted games to a dictionary, pass this into another model called games_list
+# display games in a listed table format, allow users to delete games and reorder them
+
+
+class GameListView(ListView):
+    model = Game
+    template_name = 'quiz/main.html'
+
+
+def game_view(request, pk):
+    game = Game.objects.get(pk=pk)
+    return render(request, 'quiz/matcher.html', {'obj': game})
 
 

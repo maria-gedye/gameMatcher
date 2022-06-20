@@ -5,9 +5,8 @@ import random
 # Anytime new classes or changes to classes happen, run:
 # python manage.py makemigrations
 # python manage.py migrate
-# if you delete db.sqlite and migration folder or it is first time
-# you are making migrations add app name to command like so:
-# python manage.py makemigrations quiz
+
+# QUIZ PART OF THE APP
 
 
 class Quiz(models.Model):
@@ -75,3 +74,27 @@ class Result(models.Model):
         return str(self.pk)
 
 
+# MATCHING PART OF THE APP
+
+# We will need a game model to store game objects into the database
+# the game model needs an attribute called genre which takes a value of a list of genres
+# We will need to import the result model from quiz to access the user's hiscore
+
+
+class GamesList(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def get_games(self):
+        games = list(self.game_set.all())
+        return games
+
+
+class Game(models.Model):
+    name = models.CharField(max_length=250)
+    year = models.IntegerField()
+    image = models.ImageField(blank=True, upload_to='images')
+    genres = models.JSONField(default=list)
+    info = models.CharField(max_length=250)
+
+    def __str__(self):
+        return f"{self.name}, {self.year}"

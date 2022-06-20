@@ -1,0 +1,23 @@
+{% extends "quiz/base.html" %}
+{% load static %}
+
+{% block scripts %}
+  <script src="{% static 'quiz/js/matcher.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block title %}
+home
+{% endblock title %}
+
+{% block content %}
+<div class="h1">GameMatcher</div>
+<hr>
+<h3>Check out these games based on your results</h3>
+{% for obj in object_list %}
+  <button
+      class="btn btn-link modal-button">
+      {{obj.name}}
+  </button><br>
+
+{% endfor %}
+{% endblock content %}

@@ -108,7 +108,7 @@ const sendData = () => {
 
 quizForm.addEventListener('submit', e=>{
     e.preventDefault()
-
+// Use this event listener to show results button and matching button
     sendData()
 })
 
@@ -121,8 +121,4 @@ homeBtn.addEventListener('click', ()=>{
 
 // const scoreChart = document.getElementById('score-chart')
 
-// Next steps (Group Assessment):
-/* - display more detailed results (show user's top characteristics and display text info)
-    - set up logic for game recommendations (chain of if/else cases)
-    - Merge styling across git branches */
 

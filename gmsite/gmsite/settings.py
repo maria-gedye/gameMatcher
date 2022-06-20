@@ -26,8 +26,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # these are our custom apps
-    'matcher',
 ]
 
 MIDDLEWARE = [
