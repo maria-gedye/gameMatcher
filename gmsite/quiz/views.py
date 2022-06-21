@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Quiz
 from django.views.generic import ListView
 from django.http import JsonResponse
-from .models import Question, Answer, Result, Game
+from .models import Question, Answer, Result
 
 
 class QuizListView(ListView):
@@ -94,25 +94,5 @@ def save_quiz_view(request, pk):
             return JsonResponse({'all_questions_complete': True, 'results': results, 'scores': characteristic_scores})
         else:
             return JsonResponse({'all_questions_complete': False, 'results': results, 'scores': characteristic_scores})
-
-
-# MATCHING PART OF THE APP
-
-# Functions needed:
-# a for loop that matches any value from the user's hiscore against a game's genre values.
-# count how many genres match per game
-# sort games out. games with the highest number of matching genres are ordered first
-# store sorted games to a dictionary, pass this into another model called games_list
-# display games in a listed table format, allow users to delete games and reorder them
-
-
-class GameListView(ListView):
-    model = Game
-    template_name = 'quiz/main.html'
-
-
-def game_view(request, pk):
-    game = Game.objects.get(pk=pk)
-    return render(request, 'quiz/matcher.html', {'obj': game})
 
 
