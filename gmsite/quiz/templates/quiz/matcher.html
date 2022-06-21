@@ -6,25 +6,18 @@
 {% endblock scripts %}
 
 {% block title %}
-Your matches
+home
 {% endblock title %}
 
 {% block content %}
-<button type="button" id="home-button" class="btn btn-dark">go home</button>
 <div class="h1">GameMatcher</div>
 <hr>
 <h3>Check out these games based on your results</h3>
-<br>
-    <table>
-        <tr>
-            <th>Field 1</th>
-            <th>Field N</th>
-        </tr>
-        {% for obj in obj_list %}
-        <tr>
-            <td>{{ obj.name }}</td>
-            <td>{{ obj.year }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+{% for obj in object_list %}
+  <button
+      class="btn btn-link modal-button">
+      {{obj.name}}
+  </button><br>
+
+{% endfor %}
 {% endblock content %}
