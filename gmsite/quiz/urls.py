@@ -9,7 +9,7 @@ from .views import (
 app_name = 'quizzes'
 
 urlpatterns = [
-    path('', QuizListView.as_view(), name='main-view'),
+    path('', QuizListView.as_view(), name='quiz-list'),
     # primary key is important and is how we retrieve the quiz object
     path('<pk>/', quiz_view, name='quiz-view'),
     path('<pk>/save/', save_quiz_view, name='save-view'),

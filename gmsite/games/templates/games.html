@@ -13,6 +13,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
+                <th scope="col">ID</th>
                 <th scope="col">Image</th>
                 <th scope="col">Title</th>
                 <th scope="col">Year</th>
@@ -23,6 +24,7 @@
         <tbody>
             {% for obj in object_list %}
                 <tr>
+                    <td>{{ obj.id }}</td>
                     <th scope="row">
                         <img style="height: 100px; width: auto;" src="{{ obj.imageURL }}" class="card-img-top" alt="...">
                     </th>
@@ -36,7 +38,7 @@
     </table>
 
     <div class="text-center">
-        <button type="button" id="home-button" class="btn btn-dark">go to quiz</button>
-        <a href=""><button type="button" class="btn btn-primary">BUTTON</button></a>
+        <button type="button" id="" class="btn btn-dark">go home</button>
+        <a href=""><button type="button" id="quiz-btn" class="btn btn-primary">Start quiz</button></a>
     </div>
 {% endblock content %}
