@@ -108,11 +108,18 @@ def save_quiz_view(request, pk):
 
 class GameListView(ListView):
     model = Game
-    template_name = 'quiz/main.html'
+    template_name = 'quiz/matcher.html'
 
 
+# for viewing one game at a time based on their pk
 def game_view(request, pk):
     game = Game.objects.get(pk=pk)
     return render(request, 'quiz/matcher.html', {'obj': game})
+
+
+# this will get all games
+def game_data_view(request):
+    all_games = Game.objects.all()
+    return render(request, 'quiz/matcher.html', {'obj_list': all_games})
 
 
