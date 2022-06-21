@@ -8,7 +8,8 @@ from .views import (
     mainmenu_view, # Olivias code 
     game_view, # Olivias code 
     about_view, # Olivias code 
-    profile_view # Olivias code 
+    profile_view, # Olivias code 
+    quizpage_view # Olivias code
 )
 
 app_name = 'quizzes'
@@ -20,6 +21,7 @@ urlpatterns = [
     path('games/', game_view, name='game-view'),
     path('about/', about_view, name='about-view'),
     path('profile/', profile_view, name='profile-view'),
+    path('quiz/', quizpage_view,name='quizpage-view' ),
       # Olivias code end
     # primary key is important and is how we retrieve the quiz object
     path('<pk>/', quiz_view, name='quiz-view'),

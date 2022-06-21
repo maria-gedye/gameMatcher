@@ -27,7 +27,7 @@
     <div id="NavContainer">
         <div id="NavBar">
             <a class="Nav" href="{% url 'quizzes:game-view' %}">Games</a>
-            <a class="Nav" href="Test.html">Test</a>
+            <a class="Nav" href="{% url 'quizzes:quizpage-view' %}">Quiz</a>
             <a class="FlexContainers" href="{% url 'quizzes:mainmenu-view' %}">
                 <img class="Logo2" alt="GameMatcher logo" src="quiz/static/Images/Game.png">
             </a>
@@ -39,7 +39,7 @@
     <div class="HeadingContainer">
         <div id="flexBodyContainer">
             <div id="NavContainer2">
-                <a id="SignInBtn" href="{% url 'quizzes:quiz-view' %}">
+                <a id="SignInBtn" href="{% url 'quizzes:quizpage-view' %}">
                     <button id="SignIn">Start Matching!</button>
                 </a>
             </div>
