@@ -17,6 +17,9 @@ def about_view(request):
 def profile_view(request):
     return render(request, 'quiz/Profile.html', {})
 
+def quizpage_view(request):
+        return render(request, 'quiz/quiz.html', {})
+
 class QuizListView(ListView):
     model = Quiz
     template_name = 'quiz/main.html'
