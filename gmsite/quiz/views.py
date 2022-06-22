@@ -5,6 +5,7 @@ from django.http import JsonResponse
 from .models import Question, Answer, Result
 
 
+# Olivias Code
 def mainmenu_view(request):
     return render(request, 'quiz/MainMenu.html', {})
 
@@ -19,6 +20,7 @@ def profile_view(request):
 
 def quizpage_view(request):
         return render(request, 'quiz/quiz.html', {})
+# Olivias Code End
 
 class QuizListView(ListView):
     model = Quiz
