@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .models import Game, UsersProfile
 from django.http import HttpResponse
-# MATCHING PART OF THE APP
+from django.http import HttpResponseRedirect
+# GAME MATCHING PART OF THE APP
 
 # Functions needed:
 # a for loop that matches any value from the user's hiscore against a game's genre values.
@@ -9,9 +10,6 @@ from django.http import HttpResponse
 # sort games out. games with the highest number of matching genres are ordered first
 # store sorted games to a dictionary, pass this into another model called games_list
 # display games in a listed table format, allow users to delete games and reorder them
-HTML_STRING = """
-<h1>GAMES LIST</h1>
-"""
 
 
 def games_list(request):
@@ -24,6 +22,10 @@ def games_list(request):
     }
     print(context)
     return render(request, 'games.html', context)
+
+
+def go_to_quiz(request):
+    return HttpResponseRedirect('/quiz/')
 
 
 
