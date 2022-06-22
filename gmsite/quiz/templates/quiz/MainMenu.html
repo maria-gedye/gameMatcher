@@ -14,7 +14,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>GameMatcher</title>
     {% load static %}
-    <!--ERROR WITH CONNECTING CSS FILE BELOW-->
     <link rel="stylesheet" href="{% static 'quiz/css/stylesheet.css' %}">
     {% block scripts %}
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -29,7 +28,7 @@
             <a class="Nav" href="{% url 'quizzes:game-view' %}">Games</a>
             <a class="Nav" href="{% url 'quizzes:quizpage-view' %}">Quiz</a>
             <a class="FlexContainers" href="{% url 'quizzes:mainmenu-view' %}">
-                <img class="Logo2" alt="GameMatcher logo" src="quiz/static/Images/Game.png">
+                <img class="Logo2" alt="GameMatcher logo" url="quiz/static/Images/Game.png" >
             </a>
             <a class="Nav" href="{% url 'quizzes:about-view' %}">About Us</a>
             <a class="Nav" href="{% url 'quizzes:profile-view' %}">Profile</a>

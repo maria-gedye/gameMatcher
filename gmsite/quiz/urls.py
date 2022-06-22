@@ -16,6 +16,8 @@ app_name = 'quizzes'
 
 urlpatterns = [
     # Olivias code 
+
+    #creating a path for views.py
     path('', TemplateView.as_view(template_name="quiz/MainMenu.html"), name='main-view'),
     path('main/', mainmenu_view, name="mainmenu-view"),
     path('games/', game_view, name='game-view'),
