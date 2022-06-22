@@ -28,7 +28,7 @@
 
 body {
     font-family: 'Montserrat Bold', sans-serif;
-    background: url("Images/Fire.jpg") no-repeat center center fixed;
+    background: url(Images/Fire.jpg) no-repeat center center fixed;
 }
 html{
     box-sizing: border-box;
