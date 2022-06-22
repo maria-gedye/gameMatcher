@@ -2,6 +2,7 @@ console.log('helo world quiz')
 const url = window.location.href
 
 const quizBox = document.getElementById('quiz-box')
+
 let data
 
 $.ajax({
