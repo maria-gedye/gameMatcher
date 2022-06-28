@@ -4,14 +4,23 @@
 
 <head>
   <!-- CSS only -->
-  <script src="https://kit.fontawesome.com/512b61f13b.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="{% static 'stylesheet.css' %}">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>GameMatcher Profile</title>
+ <!-- Required meta tags -->
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS only -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+<!-- bootstrap css -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<title>GameMatcher Profile</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'quiz/css/stylesheet.css' %}">
+{% block scripts %}
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <script src="https://kit.fontawesome.com/512b61f13b.js" crossorigin="anonymous"></script>
+{% endblock scripts %}
+   
 </head>
 
 <body>
@@ -21,7 +30,8 @@
             <a class="Nav" href="{% url 'quizzes:game-view' %}">Games</a>
             <a class="Nav" href="{% url 'quizzes:quizpage-view' %}">Quiz</a>
             <a class="FlexContainers" href="{% url 'quizzes:mainmenu-view' %}">
-                <img class="Logo2" alt="GameMatcher logo" src="Images/Game.png">
+                {% load static %}
+                <img class="Logo2" alt="GameMatcher logo" src="{% static '\quiz\Images\Game.png' %}" >
             </a>
             <a class="Nav" href="{% url 'quizzes:about-view' %}">About Us</a>
             <a class="Nav" href="{% url 'quizzes:profile-view' %}"Profile</a>

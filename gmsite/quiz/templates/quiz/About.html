@@ -29,7 +29,8 @@
       <a class="Nav" href="{% url 'quizzes:game-view' %}">Games</a>
       <a class="Nav" href="{% url 'quizzes:quizpage-view' %}">Quiz</a>
       <a class="FlexContainers" href="{% url 'quizzes:mainmenu-view' %}">
-          <img class="Logo2" alt="GameMatcher logo" url="quiz/static/Images/Game.png">
+        {% load static %}
+        <img class="Logo2" alt="GameMatcher logo" src="{% static '\quiz\Images\Game.png' %}" >
       </a>
       <a class="Nav" href="{% url 'quizzes:about-view' %}">About Us</a>
       <a class="Nav" href="{% url 'quizzes:profile-view' %}">Profile</a>
@@ -51,7 +52,7 @@
     <div class="row">
       <div class="column">
         <div class="card">
-          <img src="Images/Maria.jpg" alt="Maria" style="width:100%">
+          <img src="{% static '\quiz\Images\Maria.jpg' %}" alt="Maria" style="width:100%">
           <div class="container">
             <h2>Maria Gedye</h2>
             <p class="title">CEO & Founder</p>
@@ -64,7 +65,7 @@
 
       <div class="column">
         <div class="card">
-          <img src="Images/Olivia.jpg" alt="Olivia" style="width:100%">
+          <img src="{% static '\quiz\Images\Olivia.jpg' %}" alt="Olivia" style="width:100%">
           <div class="container">
             <h2>Olivia Walker</h2>
             <p class="title">Art Director</p>
@@ -77,7 +78,7 @@
  <!-- Profile Section -->
       <div class="column">
         <div class="card">
-          <img src="Images/Dominic.jpg" alt="Dom" style="width:100%">
+          <img src="{% static '\quiz\Images\Dominic.jpg' %}" alt="Dom" style="width:100%">
           <div class="container">
             <h2>Dominic Luis</h2>
             <p class="title">Designer</p>
