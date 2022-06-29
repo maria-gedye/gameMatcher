@@ -48,7 +48,6 @@ def quiz_data_view(request, pk):
 
 
 def save_quiz_view(request, pk):
-    #print(request.POST)
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
         questions = []
         data = request.POST
@@ -57,10 +56,8 @@ def save_quiz_view(request, pk):
         data_.pop('csrfmiddlewaretoken')
 
         for k in data_.keys():
-            print('key: ', k)
             question = Question.objects.get(text=k)
             questions.append(question)
-        #print(questions)
 
         user = request.user
         quiz = Quiz.objects.get(pk=pk)
@@ -77,7 +74,6 @@ def save_quiz_view(request, pk):
             'expression': 0,
             'story': 0
         }
-        score = 0
         incomplete_count = 0
         results = []
 
@@ -93,7 +89,7 @@ def save_quiz_view(request, pk):
                         for k in ck:
                             if q.characteristic == k:
                                 characteristic_scores[k] += a.score
-                # if the answers characteristic matches the dict's key
+                # if the question's characteristic matches the dict's key
                 # take the answers score and update the matching key's value
                 results.append({str(q): a_selected})
 
@@ -102,18 +98,25 @@ def save_quiz_view(request, pk):
                 incomplete_count += 1
 
         results.append(characteristic_scores)
-        print(characteristic_scores)
-        # all prints appear once server is closed - need to fix this
-        score_ = max(characteristic_scores, key=characteristic_scores.get)
-        Result.objects.create(quiz=quiz, user=user, score=score_)
+
+# remove characteristics that score under 4 and store into a new dict
+        hiscore = {k: v for k, v in characteristic_scores.items() if v > 4}
+# create a sorted list of the above dict's keys
+        hiscore_keys = sorted(hiscore, key=hiscore.get, reverse=True)
+        print(hiscore_keys)
+# create a new result object
+        Result.objects.create(quiz=quiz, user=user, hiscore=hiscore_keys)
 
         if incomplete_count == 0:
             return JsonResponse({'all_questions_complete': True, 'results': results, 'scores': characteristic_scores})
         else:
             return JsonResponse({'all_questions_complete': False, 'results': results, 'scores': characteristic_scores})
-    # if all questions are != "" then 'passed': True else 'passed': False
 
 
-
-
-
+def results_view(request, pk):
+    result_obj = Result.objects.get(id=pk)
+    print(result_obj)
+    context = {
+        'user_result': result_obj
+    }
+    return render(request, 'results.html', context)

@@ -5,9 +5,8 @@ import random
 # Anytime new classes or changes to classes happen, run:
 # python manage.py makemigrations
 # python manage.py migrate
-# if you delete db.sqlite and migration folder or it is first time
-# you are making migrations add app name to command like so:
-# python manage.py makemigrations quiz
+
+# QUIZ PART OF THE APP
 
 
 class Quiz(models.Model):
@@ -25,6 +24,7 @@ class Quiz(models.Model):
 
     class Meta:
         verbose_name_plural = 'Quizzes'
+
 
 CHARACTERISTIC_CHOICES = (
     ('---', '---'),
@@ -67,11 +67,9 @@ class Answer(models.Model):
 class Result(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    score = models.CharField(max_length=50)
-    # need to find data type that can display all characteristics as keys with
-    # retrospective scores
+    # store user's hiscores as a list
+    hiscore = models.JSONField(default=list)
 
     def __str__(self):
         return str(self.pk)
-
 

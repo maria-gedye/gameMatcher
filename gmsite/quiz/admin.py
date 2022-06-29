@@ -12,7 +12,7 @@ class AnswerInline(admin.TabularInline):
 
 
 class QuestionAdmin(admin.ModelAdmin):
-    inlines = [AnswerInline]
+    inlines = [AnswerInline]  # allow answer fields to be edited on same page as question fields
 
 
 admin.site.register(Question, QuestionAdmin)
