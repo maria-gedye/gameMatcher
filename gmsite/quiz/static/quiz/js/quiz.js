@@ -59,7 +59,7 @@ const sendData = () => {
             // console.log(response)
             const scores = response.scores
             const results = response.results
-            console.log(results)
+            console.log(results) // returns an array of objects, questions:answers and the scores
             const rgb = ['aqua', 'blue', 'fuchsia', 'green',
                     'lime', 'navy', 'orange', 'purple', 'red',
                      'teal', 'yellow']
@@ -75,7 +75,7 @@ const sendData = () => {
             // CHART.JS CONFIG
             const config = {
               type: 'pie',
-              data: scoreData,  // should be scores ,
+              data: scoreData,
               options: {
                 responsive: true,
                 maintainAspectRatio: true,
@@ -97,10 +97,8 @@ const sendData = () => {
                 document.getElementById('scoreChart'),
                 config
               )
-                    // we want to display the characteristic scores only;
-                    // the name of each characteristic and what the score is for each
 
-        },
+        }, // end of success function
         error: function(error){
             console.log(error)
         }
@@ -109,7 +107,6 @@ const sendData = () => {
 
 quizForm.addEventListener('submit', e=>{
     e.preventDefault()
-// Use this event listener to show results button and matching button
     sendData()
 })
 
@@ -120,6 +117,5 @@ homeBtn.addEventListener('click', ()=>{
         window.location.href = homeUrl
     })
 
-// const scoreChart = document.getElementById('score-chart')
 
 

@@ -96,3 +96,10 @@ def save_quiz_view(request, pk):
             return JsonResponse({'all_questions_complete': False, 'results': results, 'scores': characteristic_scores})
 
 
+def results_view(request, pk):
+    result_obj = Result.objects.get(id=pk)
+    print(result_obj)
+    context = {
+        'user_result': result_obj
+    }
+    return render(request, 'results.html', context)

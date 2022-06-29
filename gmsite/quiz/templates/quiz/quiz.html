@@ -30,16 +30,18 @@
   <canvas id="scoreChart" ></canvas>
 </div>
 
-<div id="result-box" class="not-visible"> <!--hide this div until save button has been pressed-->
+<div id="result-box" class="not-visible">
   <p>
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <button id="result-btn" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       your results
     </button>
     <button type="button" id="match-button" class="btn btn-success">Your matches</button>
   </p>
   <div class="collapse" id="collapseExample">
-    <div class="card card-body">
-      Your top gamer characteristics are: (pass through result.hiscore)
+    <div id="score-box" class="card card-body">
+      Your top gamer characteristics are:
+      {{ scores }}
+      {{ scores }}
 
     </div>
   </div>

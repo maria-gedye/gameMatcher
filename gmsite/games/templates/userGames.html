@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>gameMatcher</title>
+{% endblock title %}
+
+{% block scripts %}
+    <script src="{% static 'js/userGames.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block content %}
+    <h1 style="text-align: center; padding-top: 1em; padding-bottom: 1em;">Your profile</h1>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">A</th>
+                <th scope="col">B</th>
+                <th scope="col">C</th>
+                <th scope="col">D</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{ obj.id }}</td>
+                    <th scope="row">{{ obj.quiz }}</th>
+                    <td>{{ obj.user }}</td>
+                    <td>{{ obj.hiscore }}</td>
+                </tr>
+        </tbody>
+    </table>
+
+    <div class="text-center">
+        <a href=""><button type="button" id="" class="btn btn-dark">go home</button></a>
+        <a href="/quiz/"><button type="button" id="quiz-btn" class="btn btn-primary">Take quiz again?</button></a>
+    </div>
+{% endblock content %}

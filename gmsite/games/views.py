@@ -24,8 +24,13 @@ def games_list(request):
     return render(request, 'games.html', context)
 
 
-def go_to_quiz(request):
-    return HttpResponseRedirect('/quiz/')
+def users_games(request, pk):
+    user_obj = Result.objects.get(id=pk)
+    print(user_obj)
+    context = {
+        'obj': user_obj
+    }
+    return render(request, 'usersGames.html', context)
 
 
 
