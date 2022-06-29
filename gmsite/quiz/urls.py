@@ -1,10 +1,12 @@
 from django.urls import path
+from django.views.generic import TemplateView
 from .views import (
     QuizListView,
     quiz_view,
     quiz_data_view,
     save_quiz_view,
     results_view,
+
 )
 
 app_name = 'quizzes'

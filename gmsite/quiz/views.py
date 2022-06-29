@@ -5,6 +5,23 @@ from django.http import JsonResponse
 from .models import Question, Answer, Result
 
 
+# Olivias Code
+def mainmenu_view(request):
+    return render(request, 'quiz/MainMenu.html', {})
+
+def game_view(request):
+    return render(request, 'quiz/Games.html', {})
+
+def about_view(request):
+        return render(request, 'quiz/About.html', {})
+
+def profile_view(request):
+    return render(request, 'quiz/Profile.html', {})
+
+def quizpage_view(request):
+        return render(request, 'quiz/quiz.html', {})
+# Olivias Code End
+
 class QuizListView(ListView):
     model = Quiz
     template_name = 'quiz/main.html'
