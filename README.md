@@ -7,7 +7,7 @@ To create a web ~~app~~ project that generates quizzes to effectively matches ga
 
 - [X] Users can take the quiz
 - [X] System takes the user input and calculates the results for that user
-- [ ] System uses the results to calculate game recommendations
+- [ ] System uses the results to calculate game recommendations (WIP)
 - [ ] Users decide which games are/are not a match
 
 ## Frameworks/Libraries
@@ -58,11 +58,17 @@ check what packages have been installed:
 
 if you haven't already, navigate to the gmsite folder (cd gameMatcher/gmsite)
 
+populate the database with data using the following commands:
+
+`python manage.py makemigrations`
+
+`python manage.py migrate`
+
 then run the server by using: 
 
 `python manage.py runserver`
 
-website should be displaying locally on [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+website should be displaying locally on [http://localhost:8000/](http://localhost:8000/)
 
 When you want to end your session or run another project, make sure you deactivate your virtual environment using the command:
 
@@ -76,19 +82,23 @@ Make sure you have followed steps 1-3 and that the server is running:
 
 `python manage.py runserver`
 
-admin website should be displaying locally on [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
+admin website should be displaying locally on [http://localhost:8000/admin/](http://localhost:8000/admin/)
 
 You should see a login page. This is the default admin login details:
 
-Username: foo
+Username: admin
 
 Password: bar
 
 ## Current Issues
 
-If no user data exists, use the following command to create an admin user to access the admin site.
+### Can't see quiz results?
 
-To create a new admin from the command line run:
+You must be logged in as a user for the POST request to be successful
+
+### No users exist?
+
+If no admin exists, create an admin user from the command line run:
 
 `winpty python manage.py createsuperuser`
 
@@ -96,4 +106,4 @@ and enter details to add yourself as a new admin user
 
 `python manage.py runserver`
 
-Run the server and type in new log in details [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
+Run the server and type in new log in details [http://localhost:8000/admin/](http://localhost:8000/admin/)

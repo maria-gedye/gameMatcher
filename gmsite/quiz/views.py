@@ -43,6 +43,8 @@ def save_quiz_view(request, pk):
             questions.append(question)
 
         user = request.user
+        # need an error to show if user is not logged in
+        print(user)
         quiz = Quiz.objects.get(pk=pk)
         # going to need dict to store each characteristic score
         characteristic_scores = {
