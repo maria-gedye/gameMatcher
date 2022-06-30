@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-# MATCHING PART OF THE APP
+# GAME MATCHING PART OF THE APP
 
 # the game model needs an attribute called genre which takes a value of a list of genres
 # We will need to import the result model from quiz to access the user's hiscore

@@ -1,0 +1,415 @@
+:root {
+    --estimateforeground: #FFFFFF;
+    --estimatebackground: #E3F3FF;
+}
+
+* {
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Montserrat Bold', sans-serif;
+    background: url("../Images/Fire.jpg") no-repeat center center fixed;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+.Nav {
+    color: black;
+    display: flex;
+    align-items: center;
+    color: var(--color-dark-blue-base);
+    height: 100%;
+    width: 120px;
+    text-decoration: none;
+    justify-content: center;
+}
+
+.Nav:hover {
+    background-color: #f0f0f0;
+}
+
+.Icon {
+    padding: 20px;
+}
+
+.Logo1 {
+    height: 50px;
+}
+
+.Logo2 {
+    max-height: 20%;
+    max-width: 20%;
+    display: flex;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#SignIn {
+    border: 2px solid #000000;
+    border-radius: 24px;
+    box-sizing: border-box;
+    text-decoration: none;
+    align-items: center;
+    text-align: center;
+}
+
+#NavBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 8px;
+    height: 80px;
+}
+
+#NavContainer,
+#flexBodyContainer {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    margin: auto;
+    justify-content: center;
+    /*   border: 1px solid black;*/
+}
+
+#NavContainer2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#NavContainer {
+    justify-content: center;
+    display: flex;
+}
+
+.Container {
+    display: flex;
+    padding: 10px;
+}
+
+.HeadingContainerSummary {
+    padding: 20px 5px;
+    background-image: url("Images/Background.png");
+    background-size: cover;
+    background-position: 50% 20%;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 300%;
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    text-align: center;
+    font-size: 120%;
+}
+
+h3 {
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--estimateforeground);
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+#intro {
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.Container {
+    padding: 20px 5px;
+    margin: 30px 20px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.HeadingContainer {
+    padding: 60px 5px;
+    background-image: url("Images/Background.png");
+    background-size: cover;
+    background-position: 50% 20%;
+    margin-bottom: 30px;
+    text-align: center;
+    /* border: 3px solid #B6DAF1;
+  /*  border-radius: 5px;*/
+    /* box-shadow: 1px 1px 8px black;*/
+}
+
+.FooterContainer {
+    padding: 20px 5px;
+    background-image: url("Images/Background.png");
+    background-size: cover;
+    background-position: 50% 20%;
+    margin-bottom: 30px;
+}
+
+.ContainerPadding {
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+    /*  border: 3px solid white;*/
+}
+
+button {
+    justify-content: space-between;
+    border-radius: 4px;
+    background-color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: 1px solid black;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding: none;
+}
+
+.FlexContainers {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    padding-bottom: 8px;
+}
+
+img {
+    max-width: 10%;
+    height: 50px;
+    display: flex;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* TEST.HTML SECTION*/
+
+.quiz-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+    width: 600px;
+    overflow: hidden;
+}
+
+.quiz-header {
+    padding: 4rem;
+}
+
+#submit {
+    background-color: #dd3510;
+    color: #fff;
+    border: none;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: inherit;
+    padding: 1.3rem;
+}
+
+.question {
+    color: black;
+    padding: 5px;
+    margin: 15px;
+}
+
+li {
+    padding: 5px;
+}
+
+
+/* GAMES PAGE*/
+
+#grid {
+    width: 600px;
+    display: grid;
+    grid-template-areas: "a a";
+    gap: 50px;
+    grid-auto-rows: 300px;
+}
+
+#grid>div {
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+}
+
+
+/* ABOUT PAGE*/
+
+.column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+}
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+    /* background-color: #ffffff; */
+    color: white;
+}
+
+.container {
+    padding: 0 16px;
+}
+
+.container::after,
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: rgb(255, 255, 255);
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+p {
+    color: white;
+}
+
+
+/*PROFILE SECTION*/
+
+
+/* .UserImage{
+   width: 150px;
+    display: flex;
+}
+.ProfileContainer{
+    justify-content: flex-start;
+}
+.ProfileContent{
+
+}
+
+#grid2 {
+    width: 600px;
+    display: grid;
+    grid-template-areas: "a a a a";
+    gap: 50px;
+    grid-auto-rows: 300px;
+}
+
+#grid2>div {
+    /* background-color: rgb(255, 255, 255); */
+
+
+/* padding: 5px;
+}
+.FGames{
+    width: 150px;
+    display: flex;
+}  */
+
+.main-body {
+    padding: 15px;
+}
+
+.card {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+
+.gutters-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+}
+
+.gutters-sm>.col,
+.gutters-sm>[class*=col-] {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.mb-3,
+.my-3 {
+    margin-bottom: 1rem!important;
+}
+
+.bg-gray-300 {
+    background-color: #e2e8f0;
+}
+
+.h-100 {
+    height: 100%!important;
+}
+
+.shadow-none {
+    box-shadow: none!important;
+}
+
+.text2 {
+    color: black;
+}

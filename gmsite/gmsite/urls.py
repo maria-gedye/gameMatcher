@@ -5,4 +5,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('quiz/', include('quiz.urls', namespace='quizzes')),
     path('games/', include('games.urls')),
+    path('', include('home.urls')),
 ]
