@@ -1,0 +1,54 @@
+ <!--Olivias Code -->
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+
+    <title>GameMatcher</title>
+    {% load static %}
+
+    {% block scripts %}
+        <script src="https://kit.fontawesome.com/512b61f13b.js" crossorigin="anonymous"></script>
+    {% endblock scripts %}
+</head>
+
+<body>
+    <!-- Nav Container -->
+    <div id="NavContainer">
+        <div id="NavBar">
+            <a class="Nav" href="{% url 'home:game-view' %}">Games</a>
+            <a class="Nav" href="{% url 'home:quizpage-view' %}">Quiz</a>
+            <a class="FlexContainers" href="{% url 'home:mainmenu-view' %}">
+
+               <!-- RESOLVE IMAGE SRC LINK -->
+                <img class="Logo2" alt="GameMatcher logo" src="gmsite/home/static/Images/Game.png" >
+            </a>
+            <a class="Nav" href="{% url 'home:about-view' %}">About Us</a>
+            <a class="Nav" href="{% url 'home:profile-view' %}">Profile</a>
+        </div>
+    </div>
+    <!-- CONTAINER -->
+    <div class="HeadingContainer">
+        <div id="flexBodyContainer">
+            <div id="NavContainer2">
+                <a id="SignInBtn" href="{% url 'home:quizpage-view' %}">
+                    <button id="SignIn">Start Matching!</button>
+                </a>
+            </div>
+        </div>
+         <!-- Footer Section -->
+        <div class="FooterContainer">
+            <div class="ContainerPadding">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

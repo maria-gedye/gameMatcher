@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>gameMatcher</title>
+{% endblock title %}
+
+{% block scripts %}
+{% endblock scripts %}
+
+{% block content %}
+    <h1 style="text-align: center; padding-top: 1em; padding-bottom: 1em;">Games</h1>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Image</th>
+                <th scope="col">Title</th>
+                <th scope="col">Year</th>
+                <th scope="col">About</th>
+                <th scope="col">Genres</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in object_list %}
+                <tr>
+                    <td>{{ obj.id }}</td>
+                    <th scope="row">
+                        <img style="height: 100px; width: auto;" src="{{ obj.imageURL }}" class="card-img-top" alt="...">
+                    </th>
+                    <th scope="row">{{ obj.name }}</th>
+                    <td>{{ obj.year }}</td>
+                    <td>{{ obj.info }}</td>
+                    <td>{{ obj.genres }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="text-center">
+        <a href=""><button type="button" id="" class="btn btn-dark">go home</button></a>
+        <a href="/quiz/"><button type="button" id="quiz-btn" class="btn btn-primary">Start quiz</button></a>
+    </div>
+{% endblock content %}

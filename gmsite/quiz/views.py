@@ -83,7 +83,7 @@ def save_quiz_view(request, pk):
         results.append(characteristic_scores)
 
 # remove characteristics that score under 4 and store into a new dict
-        hiscore = {k: v for k, v in characteristic_scores.items() if v >= 4}
+        hiscore = {k: v for k, v in characteristic_scores.items() if v > 4}
 # create a sorted list of the above dict's keys
         hiscore_keys = sorted(hiscore, key=hiscore.get, reverse=True)
         print(hiscore_keys)
@@ -91,12 +91,15 @@ def save_quiz_view(request, pk):
         Result.objects.create(quiz=quiz, user=user, hiscore=hiscore_keys)
 
         if incomplete_count == 0:
-            return JsonResponse({'all_questions_complete': True, 'results': results, 'scores': hiscore_keys})
+            return JsonResponse({'all_questions_complete': True, 'results': results, 'scores': characteristic_scores})
         else:
-            return JsonResponse({'all_questions_complete': False, 'results': results, 'scores': hiscore_keys})
-    # if all questions are != "" then 'passed': True else 'passed': False
+            return JsonResponse({'all_questions_complete': False, 'results': results, 'scores': characteristic_scores})
 
 
-
-
-
+def results_view(request, pk):
+    result_obj = Result.objects.get(id=pk)
+    print(result_obj)
+    context = {
+        'user_result': result_obj
+    }
+    return render(request, 'results.html', context)

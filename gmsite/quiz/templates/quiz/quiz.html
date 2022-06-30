@@ -1,23 +1,29 @@
 {% extends "quiz/base.html" %}
+
 {% load static %}
 
 {% block scripts %}
   <script src="{% static 'quiz/js/quiz.js' %}" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>    function showThis() {
+    document.getElementById("result-box").classList.remove("not-visible");
+}
+</script>
 
 {% endblock scripts %}
 
 {% block title %}
 {{obj.name}}
+
 {% endblock title %}
 
 {% block content %}
 {{obj.name}}
-
+        <button type="button" id="home-button" class="btn btn-dark">go home</button>
 <form id="quiz-form" class="mt-3 mb-3">
   {% csrf_token %}
   <div id="quiz-box"></div>
-  <button type="submit" class="btn btn-primary mt-3">save</button>
+  <button type="submit" class="btn btn-primary mt-3" onclick="showThis()">save</button>
 </form>
 
 <div>  <!--<h2>Your Results</h2>--></div>
@@ -26,19 +32,64 @@
   <canvas id="scoreChart" ></canvas>
 </div>
 
-<div>
+<div id="result-box" class="not-visible">
   <p>
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <button id="result-btn" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       your results
     </button>
-        <button type="button" id="home-button" class="btn btn-dark">go home</button>
+    <button type="button" id="match-button" class="btn btn-success">Your matches</button>
   </p>
   <div class="collapse" id="collapseExample">
-    <div class="card card-body">
-      (more details to come)<br>
-      Your Gamer Type is...<br>
-      You scored highest for these characteristics:
+    <div id="score-box" class="card card-body">
+      Your top gamer characteristics are:
+      {{ scores }}
+      {{ scores }}
+
     </div>
-  </div>
 </div>
-{% endblock content %}
+   <div class="HeadingContainer">
+         <div id="flexBodyContainer">
+             <div id="NavContainer2">
+              <form id="quiz-form" class="mt-3 mb-3">
+                {% csrf_token %}
+                <div id="quiz-box"></div>
+                <button type="submit" class="btn btn-primary mt-3">save</button>
+              </form>
+              
+              <div>  <!--<h2>Your Results</h2>--></div>
+              
+              <div>
+                <canvas id="scoreChart" ></canvas>
+              </div>
+              
+              <div>
+                <p>
+                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    your results
+                  </button>
+                      <button type="button" id="home-button" class="btn btn-dark">go home</button>
+                </p>
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-body">
+                    (more details to come)<br>
+                    Your Gamer Type is...<br>
+                    You scored highest for these characteristics:
+                  </div>
+                </div>
+              </div>
+              {% endblock content %}
+                 </a>
+             </div>
+         </div>
+
+  
+          <!-- Footer Section -->
+         <div class="FooterContainer">
+             <div class="ContainerPadding">
+ 
+             </div>
+         </div>
+     </div>
+ </body>
+ 
+ </html>

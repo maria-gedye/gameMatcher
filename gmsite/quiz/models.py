@@ -5,9 +5,8 @@ import random
 # Anytime new classes or changes to classes happen, run:
 # python manage.py makemigrations
 # python manage.py migrate
-# if you delete db.sqlite and migration folder or it is first time
-# you are making migrations add app name to command like so:
-# python manage.py makemigrations quiz
+
+# QUIZ PART OF THE APP
 
 
 class Quiz(models.Model):
@@ -73,5 +72,4 @@ class Result(models.Model):
 
     def __str__(self):
         return str(self.pk)
-
 
