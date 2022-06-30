@@ -3,6 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 # Olivias Code
 
+
 def mainmenu_view(request):
     return render(request, 'home/MainMenu.html', {})
 
@@ -12,7 +13,7 @@ def game_view(request):
 
 
 def about_view(request):
-        return render(request, 'home/About.html', {})
+    return render(request, 'home/About.html', {})
 
 
 def profile_view(request):
@@ -20,5 +21,5 @@ def profile_view(request):
 
 
 def quizpage_view(request):
-        return render(request, 'quiz/quiz.html', {})
+    return render(request, 'quiz/quiz.html', {})
 # Olivias Code End

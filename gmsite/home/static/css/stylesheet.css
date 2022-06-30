@@ -100,7 +100,7 @@ html {
 
 .HeadingContainerSummary {
     padding: 20px 5px;
-    background-image: url("Images/Background.png");
+    background-image: url("../Images/Background.png");
     background-size: cover;
     background-position: 50% 20%;
     margin-bottom: 30px;
